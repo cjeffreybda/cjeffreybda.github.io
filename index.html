@@ -3,22 +3,22 @@
 <head>
   <title>Clark Jeffrey – Design Portfolio</title>
   <link rel="stylesheet" href="styles.css" />
-  <script src="app.js"></script>
+  <!-- <link rel="icon" type="image/x-icon" href="media/profile.jpg"> -->
 </head>
 <body>
   <div class="header">
     <div class="downloads-flex">
-      <a class="button download" href="./downloads/Portfolio – Clark Jeffrey.pdf" download="Resume – Clark Jeffrey">&#11015 Resume</a>
-      <a class="button download" href="./downloads/Portfolio – Clark Jeffrey.pdf" download="Portfolio – Clark Jeffrey">&#11015 Portfolio</a>
+      <a class="button download" href="./media/downloads/Resume – Clark Jeffrey.pdf" download="Resume – Clark Jeffrey">&#11015 Resume</a>
+      <a class="button download" href="./media/downloads/Portfolio – Clark Jeffrey.pdf" download="Portfolio – Clark Jeffrey">&#11015 Portfolio</a>
     </div>
     <div class="socials-flex">
-      <a class="button social" href="mailto:cjeffreybda@outlook.com" target="_blank"><img class="icon black" src="./media/icons/email-black.png"><img class="icon white" src="./media/icons/email-white.png"></a>
-      <a class="button social" href="https://www.linkedin.com/in/cjeffreybda" target="_blank"><img class="icon black" src="./media/icons/linkedin-black.png"><img class="icon white" src="./media/icons/linkedin-white.png"></a>
-      <a class="button social" href="https://www.github.com/cjeffreybda" target="_blank"><img class="icon black" src="./media/icons/github-black.png"><img class="icon white" src="./media/icons/github-white.png"></a>
+      <a class="button social" href="mailto:cjeffreybda@outlook.com" target="_blank"><img class="icon black" src="./media/icons/socials/email-black.png"><img class="icon white" src="./media/icons/socials/email-white.png"></a>
+      <a class="button social" href="https://www.linkedin.com/in/cjeffreybda" target="_blank"><img class="icon black" src="./media/icons/socials/linkedin-black.png"><img class="icon white" src="./media/icons/socials/linkedin-white.png"></a>
+      <a class="button social" href="https://www.github.com/cjeffreybda" target="_blank"><img class="icon black" src="./media/icons/socials/github-black.png"><img class="icon white" src="./media/icons/socials/github-white.png"></a>
     </div>
   </div>
 
-  <h1 class="name">Clark Jeffrey</h1>
+  <h1 class="title">Clark Jeffrey</h1>
   <p class="subtitle">DESIGN PORTFOLIO</p>
   
   <p class="bio">
@@ -26,34 +26,14 @@
   </p>
 
   <!-- PROJECT GRID -->
-  <div class="project-grid">
-    <div class="project-card" onclick="showProject('chess-engine')">
-      <img class="project-image" src="media/plane.webp">
-      <div class="project-text">
-        <p class="project-title">CHESS ENGINE</p>
-        <p class="project-date">02/2024–present</p>
-        <p class="project-blurb">
-          In my free time, I'm developing a chess engine in C++. Due to the rapidly increasing number of positions the computer has to evaluate, the key problem is optimisation.
-        </p>
-      </div>
-    </div>
-
-    <div class="project-card" onclick="showProject('manual-transmission')">
-      <img class="project-image" src="media/plane.webp">
-      <div class="project-text">
-        <p class="project-title">MANUAL TRANSMISSION</p>
-        <p class="project-date">01/2024–04/2024</p>
-        <p class="project-blurb">
-          In my free time, I'm developing a chess engine in C++. Due to the rapidly increasing number of positions the computer has to evaluate, the key problem is optimisation.
-        </p>
-      </div>
-    </div>
-  </div>
+  <div class="project-grid" id="project-grid"></div>
 
   <!-- PROJECT PAGES-->
   <div class="project-page" id="chess-engine">
     hi!
   </div>
   
+  <script type="module" src="init.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
