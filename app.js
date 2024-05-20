@@ -1,9 +1,3 @@
-function showProject(i) {
-  // document.getElementById(i).style.visibility='visible';
-  // document.getElementById(i).style.opacity=1;
-  alert('hi from ' + i + '!');
-};
-
 function createProjectCards() {
 
   let selected = document.querySelector('.selected').id;
@@ -14,6 +8,7 @@ function createProjectCards() {
   projects.forEach((project) => {
     let skills = project.skills;
     let tag = project.tag;
+    let images = project.images;
 
     if (selected != 'sort-all' && ('sort-' + tag) != selected) {
       return;
@@ -21,7 +16,7 @@ function createProjectCards() {
 
     projectsHTML += `
       <div class="project-card" onclick="showProject('${project.id}')">
-        <img class="project-image" src="./media/projects/${project.id}/${project.image}">
+        <img class="project-image" src="./media/projects/${project.id}/${project.id}-${images[project.coveridx].src}">
         <div class="skills-flex">`;
     
       skills.forEach((skill) => {
@@ -39,7 +34,7 @@ function createProjectCards() {
   });
 
   document.getElementById('project-grid').innerHTML = projectsHTML;
-};
+}
 
 function changeSort(i) {
   ['sort-all', 'sort-mech', 'sort-sftw'].forEach((id) => {
@@ -51,8 +46,53 @@ function changeSort(i) {
     }
   });
   createProjectCards();
-};
+}
+
+function showProject(i) {
+  let projects = JSON.parse(localStorage.projects);
+  let projectHTML = '';
+  
+
+  projects.forEach((project) => {
+    if (project.id == i) {
+      projectHTML += `
+        <div class="project-page" id="${project.id}">
+          <div class=project-page-text>
+            <p class="project-title">${project.name}</p>
+            <p class="project-date">${project.date}</p>
+            <p class="project-body">${project.body}</p>
+          </div>
+          <div class="project-images">`
+
+      let images = project.images;
+      images.forEach((image) => {
+        projectHTML += `
+          <img class="project-image" src="./media/projects/${project.id}/${project.id}-${image.src}">
+          <p class="caption">${image.caption}</p>`
+      });
+      projectHTML += `</div></div>`;
+    }
+  });
+
+  document.querySelector('.project-container').innerHTML = projectHTML;
+
+  localStorage.fromTop = document.documentElement.scrollTop;
+  document.body.style.position = 'fixed';
+  document.body.style.overflowY = 'scroll';
+  document.body.style.top = -localStorage.fromTop + "px";
+
+  document.getElementById(i).style.visibility = 'visible';
+  document.getElementById(i).style.opacity = 1;
+  document.querySelector('.project-background').style.visibility = 'visible';
+  document.querySelector('.project-background').style.opacity = 1;
+}
 
 function closeProject() {
-  
-};
+  document.body.style.position = 'static';
+  document.body.style.overflowY = 'auto';
+  window.scrollTo(0, localStorage.fromTop);
+
+  document.querySelector('.project-background').style.visibility = 'hidden';
+  document.querySelector('.project-background').style.opacity = 0;
+  document.querySelector('.project-container').innerHTML = ``;
+}

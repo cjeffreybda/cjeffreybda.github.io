@@ -1,11 +1,12 @@
+:root {
+  --sf: 'STIX Two Text', serif;
+  --ssf: 'Source Sans 3', sans-serif;
+}
+
 body {
   background-color: rgb(30, 30, 30);
   padding-top: 71px;
   padding-bottom: 100px;
-}
-
-p {
-  font-variant-numeric: oldstyle-nums;
 }
 
 .header {
@@ -22,7 +23,7 @@ p {
 }
 
 .title {
-  font-family: serif;
+  font-family: var(--sf);
   font-size: 100px;
   margin-top: 60px;
   margin-bottom: 10pt;
@@ -60,12 +61,13 @@ p {
 }
 
 .button {
-  font-family: sans-serif;
+  font-family: var(--ssf);
+  font-size: 13pt;
   font-weight: bold;
   color: white;
   text-decoration: none;
   background-color: rgb(63, 63, 63);
-  padding: 10px 15px;
+  padding: 7px 15px;
   border-radius: 5px;
   transition: background-color 0.15s, color 0.15s box-shadow 0.15s;
   cursor: pointer;
@@ -111,7 +113,7 @@ p {
 }
 
 .bio {
-  font-family: sans-serif;
+  font-family: var(--ssf);
   /* width: min(700px, 100%); */
   color: rgb(200, 200, 200);
   font-size: 20pt;
@@ -154,7 +156,26 @@ p {
   margin: 0px 5% 0px 5%;
 }
 
-@media (max-width: 1200px) {
+.project-card {
+  width: 100%;
+  height: 525px;
+  border-radius: 25px;
+  background-color: rgb(245, 245, 245);
+  vertical-align: top;
+  opacity: 0.9;
+  transition: opacity 0.15s, box-shadow 0.15s, background-color 0.15s;
+  color: black;
+  text-decoration: none;
+  position: relative;
+}
+
+@media (max-width: 1476px) {
+  .project-card {
+    height: 600px;
+  }
+}
+
+@media (max-width: 1215px) {
   .project-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -176,19 +197,6 @@ p {
   }
 }
 
-.project-card {
-  width: 100%;
-  height: 475px;
-  border-radius: 25px;
-  background-color: rgb(245, 245, 245);
-  vertical-align: top;
-  opacity: 0.9;
-  transition: opacity 0.15s, box-shadow 0.15s, background-color 0.15s;
-  color: black;
-  text-decoration: none;
-  position: relative;
-}
-
 .project-card:hover {
   opacity: 1;
   cursor: pointer;
@@ -196,7 +204,7 @@ p {
   background-color: white;
 }
 
-.project-image {
+.project-card .project-image {
   width: 100%;
   height: 60%;
   object-fit: cover;
@@ -214,21 +222,23 @@ p {
 
 .skill {
   background-color: rgba(60, 60, 60, 1);
+  font-size: 13pt;
   padding: 5px 8px;
   margin: 0px 0px 10px 10px;
   color: rgb(240, 240, 240);
   font-weight: bold;
-  font-family: sans-serif;
+  font-family: var(--ssf);
   border-radius: 5px;
   font-variant-numeric: lining-nums;
 }
 
 .project-info {
-  padding: 15pt;
+  padding: 10pt 15pt;
 }
 
 .project-title {
-  font-family: sans-serif;
+  font-family: var(--ssf);
+  font-optical-sizing: auto;
   text-transform: uppercase;
   color: rgb(30, 30, 30);
   font-weight: bold;
@@ -238,27 +248,83 @@ p {
 }
 
 .project-date {
-  font-family: sans-serif;
+  font-family: var(--ssf);
+  font-optical-sizing: auto;
+  font-size: 13pt;
   margin-top: 0px;
   margin-bottom: 10pt;
 }
 
 .project-blurb {
-  font-family: sans-serif;
+  font-family: var(--ssf);
+  font-optical-sizing: auto;
+  font-size: 13pt;
   margin-top: 0pt;
   margin-bottom: 0pt;
+}
+
+.project-background {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 2;
+  transition: opacity 0.15s;
 }
 
 .project-page {
   background-color: white;
   position: fixed;
-  top: 80px;
-  left: 20%;
-  right: 20%;
-  bottom: 60px;
+  font-family: var(--ssf);
+  font-optical-sizing: auto;
+  top: 60px;
+  left: 15%;
+  right: 15%;
+  bottom: 40px;
   border-radius: 50px;
   visibility: hidden;
   opacity: 0;
   box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.4);
   transition: opacity 0.15s;
+  padding: 50px;
+  z-index: 3;
+  display: flex;
+  flex-direction: row;
+}
+
+.project-page .project-title {
+  font-size: 20pt;
+}
+
+.project-page .project-date {
+  font-size: 15pt;
+}
+
+.project-page-text {
+  flex: 3;
+  font-size: 13pt;
+  overflow-y: scroll;
+  padding-right: 50px;
+}
+
+.project-images {
+  flex: 2;
+  justify-content: center;
+  text-align: center;
+  padding: 0px 50px;
+  overflow-y: scroll;
+}
+
+.project-image {
+  width: 100%;
+  object-fit: scale-down;
+}
+
+.caption {
+  font-size: 12pt;
+  margin: 0px 0px 12pt 0px;
 }

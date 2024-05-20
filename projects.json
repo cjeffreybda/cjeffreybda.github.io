@@ -4,81 +4,113 @@
       "id": "portfolio-website",
       "tag": "sftw",
       "skills": ["HTML", "CSS", "JavaScript"],
-      "image": "portfolio-website-1.jpeg",
+      "images" : [
+        {"src": "1.jpeg", "caption": "Small snippet of the HTML and CSS code."}
+      ],
+      "coveridx": 0,
       "name": "Portfolio Website",
-      "date": "05/2024–present",
+      "date": "05/2024–Present",
       "blurb": "This website! The source code and commit history can be found on my GitHub.",
-      "body": ""
+      "body": "This website! The source code and commit history can be found on my <a href=\"https://www.github.com/cjeffreybda\" target=\"_blank\">GitHub</a>."
     },
     {
       "id": "chess-engine",
       "tag": "sftw",
       "skills": ["C++", "Optimisation", "wxWidgets"],
-      "image": "chess-engine-1.png",
+      "images" : [
+        {"src": "1.png", "caption": "An in‑progress game against the engine (black). The GUI was created programmatically using the wxWidgets library."},
+        {"src": "2.png", "caption": "The recursive function for searching moves."}
+      ],
+      "coveridx": 0,
       "name": "Chess Engine",
-      "date": "02/2024–present",
+      "date": "02/2024–Present",
       "blurb": "In my free time, I'm developing a chess engine with C++. Due to the rapidly growing number of positions that the computer has to evaluate, the key problem is optimisation.",
-      "body": ""
+      "body": "In my free time, I'm developing a chess engine with C++. Due to the rapidly growing number of positions that the computer has to evaluate, the key problem is optimisation. Over the course of this project, I've continually been making optimisations, to the point where now the computer is able to evaluate over 200,000 positions in less than a second, and it's continually improving. Some of the optimisations I've made are:<br><br>• passing by reference whenever possible to avoid making expensive copies<br>• using structs when passing related variables to allow them to be loaded next to each other in cache<br>• using an alpha-beta pruned search to avoid wasting time computing evaluations for worse positions<br>• using a position hash map to quickly look up scores of previously-evaluated positions<br>• using bitboards of piece locations and attacks to avoid expensive loops.<br><br>Some challenges I have encountered are:<br><br>• small overcounting errors in the move-counting algorithm drastically increase runtime, and have to be debugged by comparing to known move counts determined by Stockfish<br>• ordering moves by likeliness to be good will improve speed, but without running expensive checks, may result in double-counting many moves – a tradeoff that has to be carefully balanced<br>• small tweaks to the evaluation algorithm can drastically change which moves are considered good, and as such, evaluation has to be extensively tested<br>• as evaluation is run for every single move, any calculations performed must be as fast as possible, so as much as possible needs to be bitwise."
     },
     {
       "id": "manual-transmission",
       "tag": "mech",
       "skills": ["SolidWorks", "Prototyping"],
-      "image": "manual-transmission-3.JPG",
+      "images" : [
+        {"src": "1.jpg", "caption": "Initial transmission prototype."},
+        {"src": "2.png", "caption": "Final transmission CAD."},
+        {"src": "3.JPG", "caption": "Assembly of final transmission."}
+      ],
+      "coveridx": 2,
       "name": "Manual Transmission",
-      "date": "01/2024–14/2024",
-      "blurb": "During the first project of <span class=\"smallcaps\">mech</span> 223, I designed a two-speed manual transmission. This project required extensive use of SolidWorks and rapid prototyping techniques.",
-      "body": ""
+      "date": "01/2024–04/2024",
+      "blurb": "During the first project of MECH 223, I designed a two-speed manual transmission. This project required extensive use of SolidWorks and rapid prototyping techniques.",
+      "body": "During the first project of MECH 223, I designed a two-speed manual transmission. It implements a dog gear system, where a servo is used to move a selecting gear between the two output gears. This allowed the user to adjust the torque output of the motor in real time. The process of creating this design involved:<br><br>• calculating the torque required to drive the vehicle up the slope, based on predicted mass, friction coeffient, and other factors<br>• prototyping gear assemblies to assess viability<br>• recreating accurate gear models in SolidWorks based on physical measurements and gears' proportional relationships<br>• designing with tolerances and compliancy, allowing for error in parts without comprimising functionality<br>• stress-testing components in SolidWorks to refine the design and assess viability<br>• converting user input into mechanical actuation using a servo with a wireless transmitter.<br><br>Some challenges I encountered were:<br><br>• the available gears didn't have a consistent module, meaning that to have two different ratios, there were two 'ideal' distances, for which a good medium had to be found – the CAD model was used to determine limits<br>• on prototype tests, binding of the gears was a problem, so to address this, I added a slot to allow the gears to kick back as opposed to binding."
     },
     {
       "id": "mission-planner",
       "tag": "sftw",
       "skills": ["C++", "ROS 2", "Linux"],
-      "image": "mission-planner-2.png",
+      "images" : [
+        {"src": "1.jpg", "caption": "Initial sketch of behaviour tree architecture."},
+        {"src": "2.png", "caption": "Small code snippet of implemented behaviour tree."}
+      ],
+      "coveridx": 1,
       "name": "Mission Planner",
-      "date": "09/2023–present",
-      "blurb": "My primary project on the <span class=\"smallcaps\">ubc</span> Subbots software team is developing a 'mission planner' which coordinates the autonomous underwater vehicle's (<span class=\"smallcaps\">auv</span>'s) actions.",
-      "body": ""
+      "date": "09/2023–Present",
+      "blurb": "My primary project on the UBC Subbots software team is developing a 'mission planner' which coordinates the autonomous underwater vehicle's (AUV's) actions.",
+      "body": "My primary project on the UBC Subbots software team is developing a 'mission planner' which coordinates the autonomous underwater vehicle's (AUV's) actions. This package will serve as the backbone to the AUV's internal logic, interpreting data from sensors, and using them to inform decisions. The process of developing this package has involved:<br><br>• designing a tree architecture that will allow for conditions and actions to be run in parallel, facilitating continual adjustment as the AUV receives new information<br>• implementing and integrating the BehaviorTree nodes with ROS 2 nodes, allowing for communication across established ROS topics<br>• handling and interpreting the data sent by other nodes<br>• use of C++, Python, and XML.<br><br>Some challenges I've encountered are:<br><br>• both the main 'handling' ROS node and the smaller BT nodes rely on each other's function definitions, and so I had to implement forward declarations to prevent recursive references<br>• the AUV has to be able to adjust if any previous tests suddenly fail, so a tree architecture had to be carefully designed to incorporate these tests continually running in parallel to the other actions."
     },
     {
       "id": "unity-game",
       "tag": "sftw",
       "skills": ["C#", "Physics Simulation", "Unity"],
-      "image": "unity-game-2.png",
+      "images" : [
+        {"src": "1.png", "caption": "Level showcasing simple switch behaviour."},
+        {"src": "2.png", "caption": "Level showcasing many object interactions."}
+      ],
+      "coveridx": 1,
       "name": "Unity Video Game",
       "date": "06/2020–10/2020",
       "blurb": "As a hobby project, I developed a short video game in Unity. This provided a space to experiment with both real-time physics simulations, and logic-based object interactions.",
-      "body": ""
+      "body": "As a hobby project, I developed a short video game in Unity. The premise was a puzzle game where you can eject duplicate boxes in order to propel yourself, or activate switches. I chose this combination of mechanics to give me a space to experiment with both real-time physics simulations, and logic-based object interactions. The process of developing this game involved:<br><br>• writing in-engine physics simulations for calculating player movement and interactions with the environment<br>• creating a solid class architecture, to make level design and object interactions simple to implement<br>• use of C#, Unity, and Java.<br><br>Some challenges I encountered were:<br><br>• physics processes in Unity run on a different time scale than the rest of the game, which has to be taken into account when writing custom physics simulations<br>• collision detection and correction has to be implemented carefully, to ensure that no matter when the game updates, the player never leaves the play area."
     },
     {
       "id": "crystal-key",
       "tag": "mech",
       "skills": ["CAD", "Laser-Cutting", "Metalworking"],
-      "image": "crystal-key-3.jpg",
+      "images" : [
+        {"src": "3.jpg", "caption": "Completed key."}
+      ],
+      "coveridx": 0,
       "name": "Metal-Cast Key",
       "date": "09/2021–12/2021",
       "blurb": "As a gift to a friend, I designed, moulded, and casted a metal key. This was a good test of my metalworking skills, and taught me about the casting and heat-treating process.",
-      "body": ""
+      "body": "In my final two years of high school, my friend and I began working on a book together, in which metal keys with crystals inlaid in the handle played an important role. To commemorate one year of working on this project together, I wanted to give my friend a real-life version of this key. The process of working on this project involved:<br><br>• modelling the key in Blender, both to experiment with size and shape, and to see how the final key might look using Blender's rendering abilities<br>• creating a DXF file of the key's profile, to prepare it for laser-cutting<br>• laser-cutting the key out of acrylic of the desired size<br>• using plaster of paris to make a mould out of the acrylic key<br>• melting and casting metal in the mould, and subsequently cooling the cast slowly using an oven, in order to minimise brittleness<br>• correcting the final key with a hacksaw and a range of files.<br><br>Some challenges I encountered were:<br><br>• drastic temperature changes would cause the mould to crack, so care had to be taken at every stage, including pre-heating the mould, and bringing the temperature back down very slowly<br>• small interior peices of the mould were not strong enough, and metal that filled these areas had to be removed by hand."
     },
     {
       "id": "chess-board",
       "tag": "mech",
       "skills": ["CAD", "Woodworking"],
-      "image": "board-3.jpg",
+      "images" : [
+        {"src": "1.jpg", "caption": "Final assembled board."},
+        {"src": "3.jpg", "caption": "Completed board, after varnishing."}
+      ],
+      "coveridx": 1,
       "name": "Chess Board",
       "date": "02/2021–03/2021",
-      "blurb": "As a birthday present to my grandfather, I hand-made a chess board using woodworking techniques I developed in my <span class=\"smallcaps\">gcse</span> Design and Technology course.",
-      "body": ""
+      "blurb": "As a birthday present to my grandfather, I hand-made a chess board using woodworking techniques I developed in my GCSE Design and Technology course.",
+      "body": "For my grandfather's birthday, I wanted to make him a hand-made chess board, as we would often play chess together when I saw him. To do so, I used woodworking techniques that I'd developed in my high school GCSE Design and Technology course, including:<br><br>• creating a CAD model to determine appropriate dimensions and construction techniques<br>• using a bandsaw to precisesly cut wood strips<br>• using a mitre saw to cut decorative edges for the sides of the board<br>• evenly varnishing the final product in multiple coats to both protect the material, and make it more appealing.<br><br>Some challenges I encountered were:<br><br>• small errors in cuts led to unevenness in square sizes, which had to be corrected by hand<br>• some strips would shift under the clamping pressure required to join them, so a custom jig had to be made to keep it in place."
     },
     {
       "id": "kitchen-organiser",
       "tag": "mech",
       "skills": ["CAD", "Prototyping", "Woodworking"],
-      "image": "kitchen-organiser-3.jpg",
+      "images" : [
+        {"src": "1.jpg", "caption": "Initial concept sketches."},
+        {"src": "2.png", "caption": "Final design rendered in Blender."},
+        {"src": "3.jpg", "caption": "Completed organiser."}
+      ],
+      "coveridx": 2,
       "name": "Kitchen Organiser",
       "date": "09/2019–05/2020",
-      "blurb": "For my final project in my <span class=\"smallcaps\">gcse</span> Design and Technology course, I designed, modelled, and built a kitchen organiser. I practiced my design, prototyping, and woodworking skills.",
-      "body": ""
+      "blurb": "For my final project in my GCSE Design and Technology course, I designed, modelled, and built a kitchen organiser. I practiced my design, prototyping, and woodworking skills.",
+      "body": "For my final project in my GCSE Design and Technology course, I designed, modelled, and built a kitchen organiser. Over the course of the project, I gained experience with the entire design process, from setting specifications, to concept generation and evaluation, client consultation, and detailed design. The process of completing this project involved:<br><br>• designing and constructing a physical product incorporating continuous client consultation<br>• modelling the design in Blender to create a realistic image, for the purpose of collecting client feedback<br>• prototyping aspects of the design to assess viability<br>• manufacturing and assembling parts with the use of laser cutters, hand tools, and workshop machinery.<br><br>Some challenges I encountered were:<br><br>• the shelves had to be mounted between two faces, neither of which had an accessible back for drilling – instead, I used a push-pin inserted in the dowel hole of the shelf to mark where I had to drill on the facing sides<br>• the organiser edges had to be aligned exactly to hold the lattice design securely – blocks were used while clamping to ensure a 90° angle."
     }
   ]
 }

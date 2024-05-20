@@ -2,8 +2,11 @@
 <html lang="en">
 <head>
   <title>Clark Jeffrey – Design Portfolio</title>
-  <link rel="stylesheet" href="styles.css?version=1" />
+  <link rel="stylesheet" href="styles.css?version=2" />
   <!-- <link rel="icon" type="image/x-icon" href="media/profile.jpg"> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="header">
@@ -22,7 +25,7 @@
   <p class="subtitle">DESIGN PORTFOLIO</p>
   
   <p class="bio">
-    My name is Clark, and I'm an incoming third-year student studying mechatronics engineering at <span class="smallcaps">ubc</span>. I'm particularly intersted in controls, and more generally the intersection of mathematics and mechatronic design.
+    My name is Clark, and I'm an incoming third-year student studying mechatronics engineering at UBC. I'm particularly intersted in controls, and more generally the intersection of mathematics and mechatronic design.
   </p>
 
   <div class="sort-flex">
@@ -35,10 +38,9 @@
   <div class="project-grid" id="project-grid"></div>
 
   <!-- PROJECT PAGES-->
-  <div class="project-page" id="chess-engine">
-    hi!
-  </div>
-  
+  <div class="project-background" onclick="closeProject()"></div>
+
+  <div class="project-container"></div>
   
   <script type="module" src="init.js"></script>
   <script src="app.js"></script>
