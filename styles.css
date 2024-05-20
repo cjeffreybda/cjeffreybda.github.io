@@ -132,11 +132,12 @@ p {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin: 50px 0px;
+  margin: 70px 0px;
 }
 
 .sort {
   margin: 0px 7px;
+  font-size: 15pt;
 }
 
 .sort-flex .selected {
