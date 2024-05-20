@@ -7,13 +7,15 @@ function showProject(i) {
 };
 
 function createProjectCards() {
+
+  let selected = document.querySelector('.selected').id;
+
   let projects = JSON.parse(localStorage.projects);
   let projectsHTML = '';
 
   projects.forEach((project) => {
     let skills = project.skills;
     let tag = project.tag;
-    let selected = localStorage.selected;
 
     if (selected != 'sort-all' && ('sort-' + tag) != selected) {
       return;
@@ -45,7 +47,6 @@ function changeSort(i) {
   ['sort-all', 'sort-mech', 'sort-sftw'].forEach((id) => {
     if (i == id) {
       document.getElementById(id).className = 'button sort selected';
-      localStorage.selected = id;
     }
     else {
       document.getElementById(id).className = 'button sort';
