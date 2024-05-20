@@ -2,7 +2,7 @@
   "projects": [
     {
       "id": "portfolio-website",
-      "tag": "software",
+      "tag": "sftw",
       "skills": ["HTML", "CSS", "JavaScript"],
       "image": "portfolio-website-1.jpeg",
       "name": "Portfolio Website",
@@ -12,7 +12,7 @@
     },
     {
       "id": "chess-engine",
-      "tag": "software",
+      "tag": "sftw",
       "skills": ["C++", "Optimisation", "wxWidgets"],
       "image": "chess-engine-1.png",
       "name": "Chess Engine",
@@ -22,7 +22,7 @@
     },
     {
       "id": "manual-transmission",
-      "tag": "mechanical",
+      "tag": "mech",
       "skills": ["SolidWorks", "Prototyping"],
       "image": "manual-transmission-3.JPG",
       "name": "Manual Transmission",
@@ -32,7 +32,7 @@
     },
     {
       "id": "mission-planner",
-      "tag": "software",
+      "tag": "sftw",
       "skills": ["C++", "ROS 2", "Linux"],
       "image": "mission-planner-2.png",
       "name": "Mission Planner",
@@ -42,7 +42,7 @@
     },
     {
       "id": "unity-game",
-      "tag": "software",
+      "tag": "sftw",
       "skills": ["C#", "Physics Simulation", "Unity"],
       "image": "unity-game-2.png",
       "name": "Unity Video Game",
@@ -52,7 +52,7 @@
     },
     {
       "id": "crystal-key",
-      "tag": "mechanical",
+      "tag": "mech",
       "skills": ["CAD", "Laser-Cutting", "Metalworking"],
       "image": "crystal-key-3.jpg",
       "name": "Metal-Cast Key",
@@ -62,7 +62,7 @@
     },
     {
       "id": "chess-board",
-      "tag": "mechanical",
+      "tag": "mech",
       "skills": ["CAD", "Woodworking"],
       "image": "board-3.jpg",
       "name": "Chess Board",
@@ -72,7 +72,7 @@
     },
     {
       "id": "kitchen-organiser",
-      "tag": "mechanical",
+      "tag": "mech",
       "skills": ["CAD", "Prototyping", "Woodworking"],
       "image": "kitchen-organiser-3.jpg",
       "name": "Kitchen Organiser",

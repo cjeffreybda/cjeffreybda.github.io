@@ -25,6 +25,12 @@
     My name is Clark, and I'm an incoming third-year student studying mechatronics engineering at <span class="smallcaps">ubc</span>. I'm particularly intersted in controls, and more generally the intersection of mathematics and mechatronic design.
   </p>
 
+  <div class="sort-flex">
+    <p class="button sort selected" id="sort-all" onclick="changeSort('sort-all')">All</p>
+    <p class="button sort" id="sort-mech" onclick="changeSort('sort-mech')">Mechanical</p>
+    <p class="button sort" id="sort-sftw" onclick="changeSort('sort-sftw')">Software</p>
+  </div>
+
   <!-- PROJECT GRID -->
   <div class="project-grid" id="project-grid"></div>
 
@@ -32,6 +38,7 @@
   <div class="project-page" id="chess-engine">
     hi!
   </div>
+  
   
   <script type="module" src="init.js"></script>
   <script src="app.js"></script>
