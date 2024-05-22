@@ -67,8 +67,10 @@ function showProject(i) {
       let images = project.images;
       images.forEach((image) => {
         projectHTML += `
-          <img class="project-image" src="./media/projects/${project.id}/${project.id}-${image.src}">
-          <p class="caption">${image.caption}</p>`
+          <div class="project-image-container">
+            <img class="project-image" src="./media/projects/${project.id}/${project.id}-${image.src}">
+            <p class="caption">${image.caption}</p>
+          </div>`
       });
       projectHTML += `</div></div>`;
     }
