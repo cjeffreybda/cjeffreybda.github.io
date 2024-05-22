@@ -83,6 +83,7 @@ function showProject(i) {
 
   document.getElementById(i).style.visibility = 'visible';
   document.getElementById(i).style.opacity = 1;
+  document.getElementById(i).style.transform = 'scale(1)';
   document.querySelector('.project-background').style.visibility = 'visible';
   document.querySelector('.project-background').style.opacity = 1;
 }
@@ -92,7 +93,13 @@ function closeProject() {
   document.body.style.overflowY = 'auto';
   window.scrollTo(0, localStorage.fromTop);
 
-  document.querySelector('.project-background').style.visibility = 'hidden';
+  document.querySelector('.project-page').style.opacity = 0;
+  document.querySelector('.project-page').style.transform = 'scale(0.8)';
   document.querySelector('.project-background').style.opacity = 0;
-  document.querySelector('.project-container').innerHTML = ``;
+
+  document.querySelector('.project-background').style.visibility = 'hidden';
+  
+  setTimeout(() => {
+    document.querySelector('.project-container').innerHTML = ``;
+  }, 150);
 }
