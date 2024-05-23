@@ -368,7 +368,9 @@ body {
 
   .project-images {
     flex: 4;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 12pt;
     /* flex-direction: row; */
     overflow-y: scroll;
     /* overflow-x: scroll; */
@@ -377,17 +379,18 @@ body {
   }
 
   .project-image-container {
-    height: 100%;
+    height: auto;
     width: auto;
     /* margin-bottom: 0px; */
     /* margin-right: 12pt; */
-    align-items: center;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
   }
 
   .project-image {
-    /* height: 80%; */
+    height: 80%;
     /* width: auto; */
+    vertical-align: bottom;
   }
 
   .caption {
