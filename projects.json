@@ -10,8 +10,8 @@
       ],
       "coveridx": 0,
       "date": "05/2024–Present",
-      "blurb": "This website! The source code and commit history can be found on my GitHub.",
-      "body": "This website! The source code and commit history can be found on my <a href=\"https://www.github.com/cjeffreybda\" target=\"_blank\">GitHub</a>."
+      "blurb": "This website! I developed it from the ground up in HTML and CSS – the source code and commit history can be found on my Github.",
+      "body": "This website! I developed it from the ground up in HTML and CSS, both as an opportunity to grow my programming skillset, and as a convenient repository of my past projects. The source code and commit history can be found on my <a href=\"https://www.github.com/cjeffreybda\" target=\"_blank\">GitHub</a>. The process of developing it involved:<br><br>• designing an intuitive and reactive page using HTML and CSS<br>• developing a modular framework using JavaScript and JSON, to make it easy to add and update projects<br>• utilising Git and GitHub for consistent version control."
     },
     {
       "id": "chess-engine",
