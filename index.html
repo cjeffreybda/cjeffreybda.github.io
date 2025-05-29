@@ -1,48 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Clark Jeffrey – Design Portfolio</title>
+  <title>Clark Jeffrey / Home</title>
   <link rel="stylesheet" href="styles.css?version=5" />
-  <!-- <link rel="icon" type="image/x-icon" href="media/profile.jpg"> -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="author" content="Clark Jeffrey">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Vollkorn+SC:wght@400;600;700;900&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap');
+  </style>
+  <script src="https://kit.fontawesome.com/ba9b5ccf25.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <div class="header">
-    <div class="downloads-flex">
-      <a class="button download" href="./media/downloads/Resume – Clark Jeffrey.pdf" download="Resume – Clark Jeffrey">↓ Resume</a>
-      <a class="button download" href="./media/downloads/Portfolio – Clark Jeffrey.pdf" download="Portfolio – Clark Jeffrey">↓ Portfolio</a>
+  <div class="trigger" id="nav-bar-index_t0"></div>
+  <nav class="nav-bar triggered" id="nav-bar-index">
+    <button class="button nav selected" href="./index.html"><div class="mobile-icon"><i class="fa-solid fa-house"></i></div><div class="desktop-text">Home</div></button>
+    <button class="button nav" href="./projects.html"><div class="mobile-icon"><i class="fa-solid fa-hammer"></i></div><div class="desktop-text">Projects</div></button>
+    <button class="button nav" href="./photography.html"><div class="mobile-icon"><i class="fa-solid fa-camera"></i></div><div class="desktop-text">Photography</div></button>
+    <!-- <button class="button nav" href="./writing.html"><div class="mobile-icon"><i class="fa-solid fa-pen-nib"></i></div><div class="desktop-text">Writing</div></button> -->
+  </nav>
+
+  <div id="content">
+    <h1 class="section-title">Clark Jeffrey</h1>
+
+    <!-- <div style="width: min(95%, 1500px); display: flex; flex-direction: row; justify-content: center; gap: 30px;">
+      <img src="./media/profile.jpg" style="height: 350px; border-radius: 30px;">
+      <div>
+        <h2>About me</h2>
+        <p>My name is Clark, and I'm in the third year of my bachelors in mechatronics engineering at UBC! I'm particularly interested in controls engineering, and the interesection of mechanical, electrical, and software design.</p>
+      </div>
+    </div> -->
+
+    <div class="button-container">
+      <a class="button social" href="mailto:cjeffreybda@outlook.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+      <a class="button social" href="https://www.linkedin.com/in/cjeffreybda/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+      <a class="button social" href="https://github.com/cjeffreybda" target="_blank"><i class="fa-brands fa-github"></i></a>
     </div>
-    <div class="socials-flex">
-      <a class="button social" href="mailto:cjeffreybda@outlook.com" target="_blank"><img class="icon black" src="./media/icons/socials/email-black.png"><img class="icon white" src="./media/icons/socials/email-white.png"></a>
-      <a class="button social" href="https://www.linkedin.com/in/cjeffreybda" target="_blank"><img class="icon black" src="./media/icons/socials/linkedin-black.png"><img class="icon white" src="./media/icons/socials/linkedin-white.png"></a>
-      <a class="button social" href="https://www.github.com/cjeffreybda" target="_blank"><img class="icon black" src="./media/icons/socials/github-black.png"><img class="icon white" src="./media/icons/socials/github-white.png"></a>
+
+    <div class="card-container">
+      <div class="card-column">
+        <div class="card-row">
+          <div class="card image hide" style="flex: 2;">
+            <img src="./media/profile.jpg"">
+          </div>
+          <div class="card text" style="flex: 5;">
+            <h2>Welcome!</h2>
+            <div class="trigger" id="about-body_t"></div>
+            <p id="about-body">My name is Clark, and I'm in the third year of my bachelors in mechatronics engineering at UBC! I'm particularly interested in controls engineering, and the interesection of mechanical, electrical, and software design.</p>
+            <div class="image-bubble">
+              <img src="./media/profile.jpg">
+            </div>
+          </div>
+        </div>
+        <div class="card-row">
+          <div class="card text" style="flex: 5;">
+            <h2>Projects</h2>
+            <div class="trigger" id="project-work-body_t"></div>
+            <p id="project-work-body">I've taken on quite a few projects, whether through my course work, design team, or just in my spare time. Studying engineering is one thing, but applying the principles you've learned to solve real-world problems is a really engaging and rewarding challenge. Check out the <span class="nav" href="./projects.html">projects</span> page to see what I've worked on.</p>
+            <div class="image-bubble">
+              <img src="./media/projects/rov-mt/rov-mt-3.JPG">
+            </div>
+          </div>
+          <div class="card image hide" style="flex: 3;">
+            <img src="./media/projects/rov-mt/rov-mt-3.JPG">
+          </div>
+        </div>
+        <div class="card-row">
+          <div class="card text">
+            <h2>Photography</h2>
+            <div class="trigger" id="photography-body_t"></div>
+            <p id="photography-body">After a long hiatus, I took up photography again in the summer of 2024, but this time on film. Compared to digital photography, I find shooting on film to be a much more intimate experience, and the pictures hold more significance to me. I've compiled some of my favourite shots on the <span class="nav" href="./photography.html">photography</span> page.</p>
+          </div>
+          <div class="card text">
+            <h2>Writing</h2>
+            <div class="trigger" id="writing-body_t"></div>
+            <p id="writing-body">I find writing to be a great way to train my creative muscles. From poems, to short stories, to a full-blown novel (which I will <i>eventually</i> finish, I promise), each medium brings about its own set of challenges, all of which are rewarding to overcome.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <h1 class="title">Clark Jeffrey</h1>
-  <p class="subtitle">— Technical Portfolio —</p>
-  
-  <p class="bio">
-    My name is Clark, and I'm a third-year student studying mechatronics engineering at UBC. I'm particularly interested in controls, and more generally the intersection of mathematics and mechatronic design.
-  </p>
-
-  <div class="sort-flex">
-    <p class="button sort selected" id="sort-all" onclick="changeSort('sort-all')">All</p>
-    <p class="button sort" id="sort-mech" onclick="changeSort('sort-mech')">Mechanical</p>
-    <p class="button sort" id="sort-sftw" onclick="changeSort('sort-sftw')">Software</p>
-  </div>
-
-  <!-- PROJECT GRID -->
-  <div class="project-grid" id="project-grid"></div>
-
-  <!-- PROJECT PAGES-->
-  <div class="project-background" onclick="closeProject()"></div>
-
-  <div class="project-container"></div>
-  
-  <script type="module" src="init.js"></script>
-  <script src="app.js"></script>
+  <script type="module" src="app.js"></script>
 </body>
 </html>
