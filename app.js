@@ -296,7 +296,7 @@ function openProject(id) {
 
     let imgSrc = driveUrlToThumb(figures[i].c[FIGURES_COLS.image].v);
 
-    html += '<li><figure>';
+    html += '<li><figure class="triggered">';
     html += `<img src="${imgSrc}">`;
     if (figures[i].c[FIGURES_COLS.caption] != null) {
       html += `<figcaption>${figures[i].c[FIGURES_COLS.caption].v}</figcaption>`;
