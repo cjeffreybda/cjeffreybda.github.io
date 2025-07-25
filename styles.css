@@ -569,6 +569,7 @@ a {
   transition-duration: 0.4s;
   transition-timing-function: ease-in-out;
   overflow-y: scroll;
+  overscroll-behavior: contain;
   scrollbar-color: var(--primary-800) var(--secondary-50);
 }
 
