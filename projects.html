@@ -24,17 +24,12 @@
   <div id="content">
     <h1 class="section-title">Projects</h1>
 
-    <div class="button-container">
-      <button class="button sort selected" id="sort-all" type="button"><i class="fa-solid fa-bars"></i></button>
-      <button class="button sort" id="sort-mech" type="button"><i class="fa-solid fa-wrench"></i></button>
-      <button class="button sort" id="sort-sftw" type="button"><i class="fa-solid fa-code"></i></button>
-    </div>
-
+    <ul class="button-container" id="categories"></ul>
     <div id="project-triggers"></div>
-    <div class="projects-container" id="projects-container"></div>
+    <ul id="projects"></ul>
   </div>
 
-  <div class="project-page" id="project-page"></div>
+  <div id="project-page" style="display: none;"></div>
   
   <script type="module" src="app.js"></script>
 </body>
