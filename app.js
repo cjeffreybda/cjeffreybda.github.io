@@ -256,7 +256,7 @@ function filterProjects(id) {
 function makeSmallCaps(str) {
   let style = "font-family: \'Vollkorn SC\'"
   
-  let acronyms = ['AUV', 'ROV'];
+  let acronyms = ['AUV', 'ROV', 'MECH', 'HTML', 'CSS', 'JS', 'API', 'REST', 'CAD', 'ROS 2', 'MATLAB', 'OOP', '3D'];
   for (let ac of acronyms) {
     console.log(ac);
     let idx = str.indexOf(ac);
@@ -281,7 +281,7 @@ function openProject(id) {
   html += '<p>' + proj.c[PROJECTS_COLS.dates].v + '</p>';
   html += '</div>';
   html += '<div class="project-content">';
-  html += '<div><p>' + proj.c[PROJECTS_COLS.description].v + '</p></div>';
+  html += '<div>' + proj.c[PROJECTS_COLS.description].v + '</div>';
 
   let firstFigure = true;
   let hasFigures = false;
