@@ -105,7 +105,11 @@ const OBSERVER = new IntersectionObserver((entries) => {
 
 async function init() {
   document.querySelector('#content').classList.add('show');
-  if (document.getElementById('projects') != null) {
+  if (document.getElementById('socials') != null) {
+    await getSocials();
+    makeSocials();
+  }
+  else if (document.getElementById('projects') != null) {
     await Promise.all([getProjects(), getFigures(), getCategories()]);
     makeCategories();
     makeProjectCards();
