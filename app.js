@@ -5,12 +5,14 @@ const FIGURES_SHEET = 'Figures';
 const CATEGORIES_SHEET = 'Categories';
 const ROLLS_SHEET = 'Rolls';
 const GALLERY_SHEET = 'Gallery';
+const SOCIALS_SHEET = 'Socials';
 const QUERY = encodeURIComponent('Select *');
 const PROJECTS_URL = `${BASE}&sheet=${PROJECTS_SHEET}&tq=${QUERY}`;
 const FIGURES_URL = `${BASE}&sheet=${FIGURES_SHEET}&tq=${QUERY}`;
 const CATEGORIES_URL = `${BASE}&sheet=${CATEGORIES_SHEET}&tq=${QUERY}`;
 const ROLLS_URL = `${BASE}&sheet=${ROLLS_SHEET}&tq=${QUERY}`;
 const GALLERY_URL = `${BASE}&sheet=${GALLERY_SHEET}&tq=${QUERY}`;
+const SOCIALS_URL = `${BASE}&sheet=${SOCIALS_SHEET}&tq=${QUERY}`;
 
 const PROJECTS_COLS = {
   "name": 0,
@@ -51,6 +53,13 @@ const GALLERY_COLS = {
   "show": 3
 }
 
+const SOCIALS_COLS = {
+  "link": 0,
+  "icon_pack": 1,
+  "icon": 2,
+  "show": 3
+}
+
 let triggers = new Map();
 
 let projects;
@@ -58,6 +67,7 @@ let figures;
 let categories;
 let rolls;
 let gallery;
+let socials;
 
 const OBSERVER = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
@@ -132,6 +142,10 @@ async function getGallery() {
   await fetch(GALLERY_URL).then(res => res.text()).then(rep => { gallery = JSON.parse(rep.substring(47).slice(0,-2)).table.rows; });
 }
 
+async function getSocials() {
+  await fetch(SOCIALS_URL).then(res => res.text()).then(rep => { socials = JSON.parse(rep.substring(47).slice(0,-2)).table.rows; });
+}
+
 function changePage(href) {
   document.querySelector('#content').classList.remove('show');
 
@@ -172,6 +186,20 @@ function setTriggerDelays() {
 
 function driveUrlToThumb(url) {
   return 'https://drive.google.com/thumbnail?id=' + url.substring(url.indexOf('/d/') + 3, url.indexOf('/view')) + '&sz=w1080';
+}
+
+// HOME
+
+function makeSocials() {
+  let html = '';
+  
+  for (let i = 0; i < socials.length; i ++) {
+    if (socials[i].c[SOCIALS_COLS.link] == null || socials[i].c[SOCIALS_COLS.icon_pack] == null || socials[i].c[SOCIALS_COLS.icon] == null || socials[i].c[SOCIALS_COLS.show].v == false) { continue; }
+    
+    html += `<li><a class="button social" href="${socials[i].c[SOCIALS_COLS.link].v}" target="_blank"><i class="fa-${socials[i].c[SOCIALS_COLS.icon_pack].v} fa-${socials[i].c[SOCIALS_COLS.icon].v}"></i></a></li>`;
+  }
+
+  document.getElementById('socials').innerHTML = html;
 }
 
 // PROJECTS
